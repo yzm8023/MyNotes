@@ -17,7 +17,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">小米便簽</string>
+    <string name="app_name">便簽</string>
     <string name="app_widget2x2">便簽2x2</string>
     <string name="app_widget4x4">便簽4x4</string>
     <string name="widget_havenot_content">沒有關聯內容，點擊新建便簽。</string>

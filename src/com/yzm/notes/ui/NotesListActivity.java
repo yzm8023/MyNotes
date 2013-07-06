@@ -62,7 +62,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.umeng.analytics.MobclickAgent;
-import com.umeng.update.UmengUpdateAgent;
+//import com.umeng.update.UmengUpdateAgent;
 import com.yzm.notes.R;
 import com.yzm.notes.data.Notes;
 import com.yzm.notes.data.Notes.NoteColumns;
@@ -155,20 +155,20 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
          */
         setAppInfoFromRawRes();
         //umeng
-        UmengUpdateAgent.update(this);
-        UmengUpdateAgent.setUpdateOnlyWifi(false);
-        UmengUpdateAgent.setOnDownloadListener(null);
+        //UmengUpdateAgent.update(this);
+        //UmengUpdateAgent.setUpdateOnlyWifi(false);
+        //UmengUpdateAgent.setOnDownloadListener(null);
         
         // init the interface，called when create
  		// params：appId, appSecret, debug
  		AdManager.getInstance(this).init("435a296171054efe","700d2c485b9e1931", false);
  		// 如果使用积分广告，请务必调用积分广告的初始化接口:
- 		OffersManager.getInstance(this).onAppLaunch();
+ 		//OffersManager.getInstance(this).onAppLaunch();
  		//插播广告
  		Random rd = new Random();
- 		int number = rd.nextInt(10);
+ 		int number = rd.nextInt(5);
  		Log.d("yzm", "==="+number);
- 		if(number == 5){
+ 		if(number == 4){
  			SpotManager.getInstance(this).showSpotAds(this);
  		}
     }
@@ -273,7 +273,8 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
         mAdBtn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				OffersManager.getInstance(NotesListActivity.this).showOffersWallDialog(NotesListActivity.this);
+				//OffersManager.getInstance(NotesListActivity.this).showOffersWallDialog(NotesListActivity.this);
+				SpotManager.getInstance(NotesListActivity.this).showSpotAds(NotesListActivity.this);
 			}
 		});
     }

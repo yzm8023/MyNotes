@@ -34,14 +34,12 @@
     
     <!-- 有米传媒 Android SDK 所需权限 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 可选 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- /有米传媒 Android SDK 所需权限 -->
     
     <!-- permission for umeng sdk -->
 	<uses-permission android:name="android.permission.READ_LOGS"/>
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 	<!-- /permission for umeng sdk -->
 
     <application
@@ -51,6 +49,9 @@
         <meta-data android:value="51bbd15e5270151941000001" android:name="UMENG_APPKEY"></meta-data>
         <meta-data android:value="HiApk" android:name="UMENG_CHANNEL"></meta-data>
         <!-- /umeng cfg -->
+        <!-- 有米渠道号(可选配置) 渠道号不能带空格，类型为整数 -->
+        <meta-data android:name="YOUMI_CHANNEL" android:value="10030" ></meta-data>
+        <!-- /有米渠道号(可选配置) -->
         <activity
             android:name=".ui.NotesListActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -186,18 +187,12 @@
             </intent-filter>
         </receiver>
         <!-- /SDK 必须配置 -->
-        <!-- 积分广告必须配置 -->
+        <!-- 积分广告必须配置 
         <receiver
             android:name="net.youmi.android.offers.OffersReceiver"
             android:exported="false" >
         </receiver>
-        <!-- ／积分广告必须配置 -->
-        <!-- 有米渠道号(可选配置) 渠道号不能带空格，类型为整数 -->
-        <meta-data
-            android:name="YOUMI_CHANNEL"
-            android:value="0" >
-        </meta-data>
-        <!-- /有米渠道号(可选配置) -->
+         ／积分广告必须配置 -->
         <!-- /有米传媒 Android SDK 配置 -->
         
         <!-- umeng download service -->
